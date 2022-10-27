@@ -1,4 +1,5 @@
 const elList = document.querySelector('.list');
+let logOut = document.querySelector('.logout');
 const localToken = localStorage.getItem('token');
 
 if (!localToken) {
@@ -30,3 +31,8 @@ async function users() {
     }
 }
 users();
+
+logOut.addEventListener('click', () => {
+    window.localStorage.removeItem('token');
+    window.location.replace('login.html')
+})
